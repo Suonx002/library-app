@@ -59,7 +59,7 @@ const newBook = () => {
 };
 
 const deleteBook = e => {
-  console.log(e.target.classList.contains('delete'));
+  //   console.log(e.target.classList.contains('delete'));
   if (e.target.classList.contains('delete')) {
     e.target.parentElement.parentElement.remove();
   }
