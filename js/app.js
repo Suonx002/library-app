@@ -34,21 +34,35 @@ const newBook = () => {
     inputAuthor.value === '' ||
     inputPage.value === ''
   ) {
-    alert('Please fill out everything!');
-  }
+    alert('Please fill out everything correctly!');
+  } else {
+    const booklist = `
+        <ul class="book-list">
+        <li>${inputTitle.value}</li>
+        <li>${inputAuthor.value}</li>
+        <li>${inputPage.value}</li>
+        <li class="switch">
+            <input type="checkbox" />
+        </li>
+        <li><i class="fas fa-trash delete"></i></li>
+        </ul>
 
-  const booklist = `
-    <ul class="book-list">
-    <li>${inputTitle.value}</li>
-    <li>${inputAuthor.value}</li>
-    <li>${inputPage.value}</li>
-    <li class="switch">
-        <input type="checkbox" />
-    </li>
-    <li class="delete"><i class="fas fa-trash"></i></li>
-    </ul>
-  `;
-  bookCollection.insertAdjacentHTML('beforeend', booklist);
+      `;
+    bookCollection.insertAdjacentHTML('beforeend', booklist);
+    // Increase count
+
+    // Clear Input
+    inputTitle.value = '';
+    inputAuthor.value = '';
+    inputPage.value = '';
+  }
+};
+
+const deleteBook = e => {
+  console.log(e.target.classList.contains('delete'));
+  if (e.target.classList.contains('delete')) {
+    e.target.parentElement.parentElement.remove();
+  }
 };
 
 // Document loaded
@@ -57,6 +71,8 @@ document.addEventListener('DOMContentLoaded', () => {
   addBtn.addEventListener('click', openModal);
   //   Close modal
   closeBtn.addEventListener('click', closeModal);
-  //   Add Book
+  //   Add a book
   addBook.addEventListener('click', newBook);
+  //Delete a book
+  bookCollection.addEventListener('click', deleteBook);
 });
