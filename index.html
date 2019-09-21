@@ -12,6 +12,56 @@
     <title>Library</title>
   </head>
   <body>
+    <div class="container">
+      <header>
+        <h2>My Library</h2>
+        <button class="primary-btn addBtn" id="addBtn">Add a Book</button>
+      </header>
+      <section class="modal-container">
+        <h3>New Book</h3>
+        <form action="#" class="modal">
+          <label for="book-title">Title</label>
+          <input
+            type="text"
+            id="book-title"
+            name="book-title"
+            placeholder="Enter book title"
+          />
+          <label for="book-author"></label>
+          <input
+            type="text"
+            id="book-author"
+            name="book-author"
+            placeholder="Enter author name"
+          />
+          <label for="book-page-number"></label>
+          <input
+            type="number"
+            id="book-page-number"
+            name="book-page-number"
+            placeholder="Enter number of pages"
+          />
+        </form>
+        <button class="primary-btn addBook" id="addBook">Add Book</button>
+      </section>
+      <section class="book-collections">
+        <h3><i class="fas fa-book-open"></i> Book Collections</h3>
+        <div class="collection-titles">
+          <h4>Title</h4>
+          <h4>Author</h4>
+          <h4>Pages</h4>
+          <h4>Read?</h4>
+          <h4>Delete</h4>
+        </div>
+        <ul class="collection-books">
+          <li class="li-title">Elemental of Programming</li>
+          <li class="li-author">Adnan Aziz</li>
+          <li class="li-page">350</li>
+          <li class="li-read">Yes</li>
+          <li class="li-delete"><i class="fas fa-trash"></i></li>
+        </ul>
+      </section>
+    </div>
     <script scr="js/app.js"></script>
   </body>
 </html>
